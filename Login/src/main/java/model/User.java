@@ -102,8 +102,24 @@ public class User {
                 boolean bl = true;
                 return bl;
             }
-            this.session.getService().loginFailed(this.clientID, "Thông tin tài khoản hoặc mật khẩu không chính xác");
-            return false;
+            String checkQuery = "select id from account where username = ? limit 1";
+            PreparedStatement psCheck = conn.prepareStatement(checkQuery);
+            psCheck.setString(1, this.username);
+            ResultSet rsCheck = psCheck.executeQuery();
+            if (rsCheck.next()) {
+                this.session.getService().loginFailed(this.clientID, "Sai mat khau, vui long nhap lai!");
+                return false;
+            } else {
+                String insertQuery = "insert into account(username, password, server_login, active, thoi_vang, vnd, tongnap) values(?, ?, ?, 1, 0, 0, 0)";
+                PreparedStatement psInsert = conn.prepareStatement(insertQuery);
+                psInsert.setString(1, this.username);
+                psInsert.setString(2, this.password);
+                psInsert.setInt(3, this.serverID);
+                psInsert.executeUpdate();
+                this.session.getService().loginFailed(this.clientID, "Dang ky thanh cong! Vui long dang nhap lai.");
+                return false;
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -280,3 +296,4 @@ public class User {
         this.server = server;
     }
 }
+
