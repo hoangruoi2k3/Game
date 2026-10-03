@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "ServerManager",
+      "request": "launch",
+      "mainClass": "nro.server.ServerManager",
+      "projectName": "TeaMobi"
+    },
+    {
+      "type": "java",
+      "name": "Launch Game Server",
+      "request": "launch",
+      "mainClass": "nro.server.ServerManager",
+      "cwd": "${workspaceFolder}/Server",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "java",
+      "name": "Launch Login Server",
+      "request": "launch",
+      "mainClass": "server.Server",
+      "cwd": "${workspaceFolder}/Login",
+      "console": "integratedTerminal"
+    }
+  ]
+}
