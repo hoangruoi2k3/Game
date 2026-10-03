@@ -1,0 +1,31 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Maven
+target/
+Login/target/
+Server/target/
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
