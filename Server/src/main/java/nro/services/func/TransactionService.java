@@ -94,6 +94,7 @@ public class TransactionService implements Runnable {
                         if (quantity < 0) {
                             Service.getInstance().sendThongBao(pl, "Không thể thực hiện");
                             trade.cancelTrade();
+                            return;
                         }
                         if (quantity == 0) {// do
                             quantity = 1;

@@ -136,6 +136,10 @@ public class Input {
                             Service.getInstance().sendThongBao(player, "Số thỏi vàng không hợp lệ");
                             return;
                         }
+                        if (soVang > 1_000_000) {
+                            Service.getInstance().sendThongBao(player, "Số lượng quá lớn");
+                            return;
+                        }
                         int tongTien = soVang * 10;
 
                         if (player.soDuVND < tongTien) {
