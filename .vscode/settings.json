@@ -1,4 +1,5 @@
 {
     "antigravity.autoOpenFiles": true,
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "antigravity.autoAcceptOnChat": true
 }

@@ -14,7 +14,7 @@ import java.time.LocalTime;
  * @author Administrator
  */
 public class AutoMaintenance extends Thread {
-    public static boolean AutoMaintenance = true;// Bật, Tắt Bảo trì tự động
+    public static boolean AutoMaintenance = false;// Bật, Tắt Bảo trì tự động
     public static final int hours = 06;// giờ bảo trì
     public static final int hours_1 = 19;// giờ bảo trì
     public static final int mins = 00;// phút bảo trì

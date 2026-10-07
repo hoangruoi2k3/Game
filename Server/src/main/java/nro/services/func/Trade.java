@@ -92,6 +92,10 @@ public class Trade {
         if (pl.getSession().actived) {
             // if (pl.nPoint.power >= 40_000_000_000L) {
             if (index == -1) {
+                if (quantity > pl.inventory.gold) {
+                    Service.getInstance().sendThongBao(pl, "Khong du vang de giao dich");
+                    return;
+                }
                 if (pl.equals(this.player1)) {
                     goldTrade1 = quantity;
                 } else {
